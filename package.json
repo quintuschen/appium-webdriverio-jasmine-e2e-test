@@ -1,0 +1,23 @@
+{
+  "name": "appium-webdriverio-jasmine-e2e-test",
+  "version": "0.1.0",
+  "description": "A working solution using Appium with JavaScript client WebriverIO and Jasmine for E2E mobile testing",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mobile",
+    "appium",
+    "e2e",
+    "jasmine"
+  ],
+  "author": "Quintus Chen",
+  "license": "MIT",
+  "dependencies": {
+    "webdriverio": "^4.12.0"
+  },
+  "devDependencies": {
+    "wdio-appium-service": "^0.2.3",
+    "wdio-jasmine-framework": "^0.3.2"
+  }
+}
