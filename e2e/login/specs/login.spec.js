@@ -1,7 +1,7 @@
-const loginPage = require('../page_objects/login.page');
+import LoginPage from '../page_objects/login.page.js';
 
 describe('Login', function () {
     it('should login', function () {
-        loginPage.login('qa', 'test');
+        LoginPage.login('qa', 'test');
     });
 });

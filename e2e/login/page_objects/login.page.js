@@ -1,21 +1,16 @@
-var LoginPage = Object.create({
+class LoginPage {
 
-    page: {
-        usernameField: $("~ua-login-username"),
-        passwordField: $("~ua-login-password"),
-        loginButton: $("~ua-login-loginButton")
-    },
+    get usernameField() { return $("~ua-login-username"); }
+    get passwordField() { return $("~ua-login-password"); }
+    get loginButton() { return $("~ua-login-loginButton"); }
 
-    getPage: function () {
-        return this.page;
-    },
-
-    login: function (username, password) {
-        this.getPage().usernameField.setValue(username);
-        this.getPage().passwordField.setValue(password);
+    login(username, password, url) {
+        this.usernameField.setValue(username);
+        this.passwordField.setValue(password);
         browser.hideDeviceKeyboard();
-        this.getPage().loginButton.click();
+        this.loginButton.click();
     }
-});
 
-module.exports = LoginPage;
+}
+
+export default new LoginPage();
