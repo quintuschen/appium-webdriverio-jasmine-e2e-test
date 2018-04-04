@@ -42,17 +42,20 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities: [{
+    capabilities: [
+
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
         // maxInstances: 5,
         // browserName: 'firefox',
-        platformName: 'iOS',
-        platformVersion: '11.2',
-        deviceName: 'iPhone 6s',
-        app: 'APP_PATH'
-    }],
+        {
+            platformName: process.env.PLATFORM_NAME,
+            platformVersion: process.env.PLATFORM_VERSION,
+            deviceName: process.env.DEVICE_NAME,
+            app: process.env.APP_PATH,
+        }
+    ],
     //
     // ===================
     // Test Configurations
@@ -138,7 +141,10 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/reporters/dot.html
-    // reporters: ['dot'],
+    reporters: ['spec', 'allure'],
+    reporterOptions: {
+        allure: {outputDir: './reports/allure-results'}
+    },
     //
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {

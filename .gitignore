@@ -1,5 +1,7 @@
 .idea/
 node_modules/
+errorShots/
+reports/
 *.log
 *.txt
 package-lock.json
