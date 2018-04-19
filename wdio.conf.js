@@ -1,7 +1,7 @@
 const defaultTimeoutInterval = 5 * 60 * 1000; // 5 minutes for Jasmine to timeout
 
 exports.config = {
-    
+
     //
     // ==================
     // Specify Test Files
@@ -18,6 +18,11 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
+    suites: {
+        login: [
+            './e2e/login/specs/*.js'
+        ]
+    },
     //
     // ============
     // Capabilities
