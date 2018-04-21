@@ -1,4 +1,6 @@
-class LoginPage {
+import BasePage from '../../common/page_objects/basePage.page.js';
+
+class LoginPage extends BasePage {
 
     get usernameField() { return $("~ua-login-username"); }
     get passwordField() { return $("~ua-login-password"); }
