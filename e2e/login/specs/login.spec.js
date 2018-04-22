@@ -13,6 +13,7 @@ describe('Login', function () {
     it('should give a proper error message when wrong credentials provided', () => {
         LoginPage.login(userInfo.username, userInfo.password + 'WRONG');
         expect(LoginPage.getAlertText()).toEqual(errorMessages.wrongCredential);
+        LoginPage.dismissAlert();
     });
     it('should be able to login with correct credentials', () => {
         LoginPage.login(userInfo.username, userInfo.password);
