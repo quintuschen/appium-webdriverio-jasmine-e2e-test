@@ -14,7 +14,14 @@ A working solution using Appium with JavaScript client WebriverIO and Jasmine fo
         export PLATFORM_VERSION=11.3
         export PLATFORM_NAME=iOS
         export APP_PATH=path_to_your_app
-        
+   
+   In this project I use the sample app ``VodQA`` (``VodQA.apk`` and ``VodQAReactNative.zip``) from Appium as an example. The original apk could be
+   found [here](https://github.com/appium/sample-code/blob/master/sample-code/apps/) at Appium's Github
+   repository. 
+   
+   I have also included a copy of this app in this repository just in case the original copy
+   on Appium's project is lost. You may find this app in `./apps/examples/`
+   
 4. To run the tests:
 
         > npm run test

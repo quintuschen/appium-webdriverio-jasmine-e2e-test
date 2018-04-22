@@ -2,11 +2,11 @@ import BasePage from '../../common/page_objects/basePage.page.js';
 
 class LoginPage extends BasePage {
 
-    get usernameField() { return $("~ua-login-username"); }
-    get passwordField() { return $("~ua-login-password"); }
-    get loginButton() { return $("~ua-login-loginButton"); }
+    get usernameField() { return $("~username"); }
+    get passwordField() { return $("~password"); }
+    get loginButton() { return $("~login"); }
 
-    login(username, password, url) {
+    login(username, password) {
         this.usernameField.setValue(username);
         this.passwordField.setValue(password);
         browser.hideDeviceKeyboard();
