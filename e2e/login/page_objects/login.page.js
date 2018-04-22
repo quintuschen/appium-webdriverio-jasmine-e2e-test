@@ -8,6 +8,7 @@ class LoginPage extends BasePage {
 
     login(username, password) {
         this.usernameField.setValue(username);
+        browser.hideDeviceKeyboard();
         this.passwordField.setValue(password);
         browser.hideDeviceKeyboard();
         this.loginButton.click();
