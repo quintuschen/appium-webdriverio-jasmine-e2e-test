@@ -1,4 +1,5 @@
 import LoginPage from '../page_objects/login.page.js';
+import PageHeader from '../../pageHeader/page_objects/pageHeader.page.js';
 
 const userInfo = {
     username: 'admin',
@@ -18,5 +19,6 @@ describe('Login', function () {
     it('should be able to login with correct credentials', () => {
         LoginPage.login(userInfo.username, userInfo.password);
         browser.pause(2000);
+        expect(PageHeader.backButton.value).toBeTruthy();
     });
 });
