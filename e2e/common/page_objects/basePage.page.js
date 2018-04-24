@@ -1,13 +1,12 @@
 export default class BasePage {
 
     getAlertText() {
-        let context = browser.contexts.value.find(value => value !== 'NATIVE_APP');
-        browser.context(context);
-        return browser.alertText();
+        if(browser.isAndroid){
+            return browser.getText(`//*[@resource-id="android:id/message"]`)
+        }
     }
 
     dismissAlert() {
-        browser.context();
         browser.alertDismiss();
     }
 }
