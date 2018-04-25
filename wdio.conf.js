@@ -201,6 +201,10 @@ exports.config = {
      */
     before: function (capabilities, specs) {
         require('babel-register');
+        global.userInfo = {
+            username: 'admin',
+            password: 'admin',
+        }
     },
     /**
      * Runs before a WebdriverIO command gets executed.
