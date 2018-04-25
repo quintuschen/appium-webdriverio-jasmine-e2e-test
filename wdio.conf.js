@@ -21,6 +21,9 @@ exports.config = {
     suites: {
         login: [
             './e2e/login/specs/*.js'
+        ],
+        sampleList: [
+            './e2e/sampleList/specs/*.js'
         ]
     },
     //
