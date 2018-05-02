@@ -43,8 +43,8 @@ exports.config = {
     // from the same test should run tests.
     //
     maxInstances: 1,
-    host: '127.0.0.1',  // This is for communicating with Appium server.
-    port: 4723,
+    host: process.env.APPIUM_SERVER_ADDRESS,  // This is for communicating with Appium server.
+    port: process.env.APPIUM_SERVER_PORT,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -136,14 +136,7 @@ exports.config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    services: ['appium'],
-    // This is for spawning Appium server.
-    appium: {
-        args:{
-            address: '127.0.0.1',
-            port: 4723
-        }
-    },
+    // services: [],
     framework: 'jasmine',
     //
     // Test reporter for stdout.
