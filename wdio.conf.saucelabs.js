@@ -1,6 +1,6 @@
-const conf = require('./wdio.conf.js');
+const config = require('./wdio.conf.js').config;
 
-exports.config = Object.assign(conf.config,
+exports.config = Object.assign(config,
     {
         protocol: 'https',
         host: 'eu1.appium.testobject.com',

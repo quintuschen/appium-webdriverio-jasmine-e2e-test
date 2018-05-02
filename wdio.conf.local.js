@@ -1,6 +1,6 @@
-const conf = require('./wdio.conf.js');
+const config = require('./wdio.conf.js').config;
 
-exports.config = Object.assign(conf.config,
+exports.config = Object.assign(config,
     {
         maxInstances: 1,
         host: '127.0.0.1',  // This is for communicating with Appium server.

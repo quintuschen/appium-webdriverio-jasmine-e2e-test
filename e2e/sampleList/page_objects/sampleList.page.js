@@ -10,8 +10,8 @@ class SampleList extends BasePage {
     get scrollViewContainer() { return $(`~scrollView`)}
 
     scrollDownToFind(item) {
-        while(!browser.isVisible(nameAccessibilityIDMapping[item])){
-            browser.execute('mobile: scroll', {direction: 'down', element: this.scrollViewContainer.value.ELEMENT});
+        while(!device.isVisible(nameAccessibilityIDMapping[item])){
+            device.execute('mobile: scroll', {direction: 'down', element: this.scrollViewContainer.value.ELEMENT});
         }
         return $(nameAccessibilityIDMapping[item]);
     }

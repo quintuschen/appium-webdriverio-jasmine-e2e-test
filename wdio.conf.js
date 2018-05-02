@@ -197,6 +197,8 @@ exports.config = {
      */
     before: function (capabilities, specs) {
         require('babel-register');
+        // Renaming browser object to device to prevent confusion.
+        global.device = browser;
         global.userInfo = {
             username: 'admin',
             password: 'admin',

@@ -1,24 +1,24 @@
 export default class BasePage {
 
     get alertOKButton() {
-        return browser.isIOS ? $('//*[@name="OK"]') : $('//*[@resource-id="android:id/button1"]')
+        return device.isIOS ? $('//*[@name="OK"]') : $('//*[@resource-id="android:id/button1"]')
     }
 
     getAlertMessage() {
-        if (browser.isIOS) {
-            browser.waitForExist('XCUIElementTypeAlert');
+        if (device.isIOS) {
+            device.waitForExist('XCUIElementTypeAlert');
             let alert = $('XCUIElementTypeAlert');
             return alert.getText('XCUIElementTypeStaticText');
-        } else if (browser.isAndroid) {
-            browser.waitForExist('//*[@resource-id="android:id/message"]');
-            return browser.getText('//*[@resource-id="android:id/message"]');
+        } else if (device.isAndroid) {
+            device.waitForExist('//*[@resource-id="android:id/message"]');
+            return device.getText('//*[@resource-id="android:id/message"]');
         }
     }
 
     dismissAlert() {
-        if (browser.isIOS) {
-            browser.alertDismiss();
-        } else if (browser.isAndroid) {
+        if (device.isIOS) {
+            device.alertDismiss();
+        } else if (device.isAndroid) {
             this.alertOKButton.click();
         }
     }
