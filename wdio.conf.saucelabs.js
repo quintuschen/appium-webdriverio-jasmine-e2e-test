@@ -1,6 +1,6 @@
-import configs from 'wdio.conf';
+const conf = require('./wdio.conf.js');
 
-exports.configs = Object.assign(configs,
+exports.config = Object.assign(conf.config,
     {
         protocol: 'https',
         host: 'eu1.appium.testobject.com',
@@ -15,4 +15,5 @@ exports.configs = Object.assign(configs,
                 testobject_test_name: process.env.TESTOBJECT_TEST_NAME,
             }
         ],
+
     });
