@@ -208,6 +208,7 @@ exports.config = {
             username: 'admin',
             password: 'admin',
         }
+        global.defaultWaitTimeForTransition = 5 * 1000;
     },
     /**
      * Runs before a WebdriverIO command gets executed.
