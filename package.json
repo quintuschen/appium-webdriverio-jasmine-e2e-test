@@ -4,6 +4,8 @@
   "description": "A working solution using Appium with JavaScript client WebriverIO and Jasmine for E2E mobile testing",
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js",
+    "local": "./node_modules/.bin/wdio wdio.conf.local.js",
+    "sauce": "./node_modules/.bin/wdio wdio.conf.saucelabs.js",
     "report": "./node_modules/.bin/allure generate --clean reports/allure-results --output reports/allure-report"
   },
   "keywords": [
