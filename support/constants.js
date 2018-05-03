@@ -8,4 +8,4 @@ export const ANDROID_ALERT_MESSAGE_SELECTOR = '*//android.widget.TextView[@resou
 export const ANDROID_ACCEPT_ALERT_SELECTOR = '*//android.widget.Button[@text="OK"]';
 export const IOS_ACCEPT_ALERT_SELECTOR = '//*[@name="OK"]';
 export const IOS_ALERT_SELECTOR = '*//XCUIElementTypeAlert';
-export const IOS_TEXT_SELECTOR = '*//XCUIElementTypeStaticText';
+export const IOS_TEXT_SELECTOR = 'XCUIElementTypeStaticText';
