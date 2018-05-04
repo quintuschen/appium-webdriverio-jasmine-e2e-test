@@ -8,7 +8,7 @@ const errorMessages = {
 describe('Login', function () {
     it('should give a proper error message when wrong credentials provided', () => {
         LoginPage.login(userInfo.username, userInfo.password + 'WRONG');
-        expect(LoginPage.getAlertMessage()).toEqual(errorMessages.wrongCredential);
+        expect(LoginPage.getAlertMessage().includes(errorMessages.wrongCredential)).toBeTruthy();
         LoginPage.dismissAlert();
     });
     it('should be able to login with correct credentials', () => {
