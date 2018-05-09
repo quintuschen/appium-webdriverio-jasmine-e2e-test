@@ -1,4 +1,4 @@
-import BasePage from '../../common/page_objects/basePage.page.js';
+import BasePage from '../../common/page_objects/basePage.page';
 
 class LoginPage extends BasePage {
 

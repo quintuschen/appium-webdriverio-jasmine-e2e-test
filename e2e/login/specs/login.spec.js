@@ -1,5 +1,5 @@
-import LoginPage from '../page_objects/login.page.js';
-import PageHeader from '../../pageHeader/page_objects/pageHeader.page.js';
+import LoginPage from '../page_objects/login.page';
+import PageHeader from '../../pageHeader/page_objects/pageHeader.page';
 
 const errorMessages = {
     wrongCredential: 'Invalid  Credentials',

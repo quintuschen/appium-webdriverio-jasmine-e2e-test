@@ -1,4 +1,5 @@
-import BasePage from '../../common/page_objects/basePage.page.js';
+import BasePage from '../../common/page_objects/basePage.page';
+import {swipeOnElement} from "../../../support/utils";
 
 const nameAccessibilityIDMapping = {
     'Native View' : '~chainedView',
@@ -9,9 +10,9 @@ const nameAccessibilityIDMapping = {
 class SampleList extends BasePage {
     get scrollViewContainer() { return $(`~scrollView`)}
 
-    scrollDownToFind(item) {
+    scrollToFind(item) {
         while(!device.isVisible(nameAccessibilityIDMapping[item])){
-            device.execute('mobile: scroll', {direction: 'down', element: this.scrollViewContainer.value.ELEMENT});
+            swipeOnElement(this.scrollViewContainer, 'up');
         }
         return $(nameAccessibilityIDMapping[item]);
     }
