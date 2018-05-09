@@ -29,10 +29,20 @@ export function swipeOnElement(element, direction, percentage = 0.5) {
         case 'left':
             start = {
                 x: Math.round(elementPosition.x + elementDimension.width * 0.8),
-                y: Math.round(elementDimension.y + elementDimension.height * 0.5),
+                y: Math.round(elementPosition.y + elementDimension.height * 0.5),
             };
             by = {
-                x: Math.round(- elementDimension.width * percentage),
+                x: Math.round(-elementDimension.width * percentage),
+                y: 0,
+            };
+            break;
+        case 'right':
+            start = {
+                x: Math.round(elementPosition.x + elementDimension.width * 0.2),
+                y: Math.round(elementPosition.y + elementDimension.height * 0.5),
+            };
+            by = {
+                x: Math.round(elementDimension.width * percentage),
                 y: 0,
             };
             break;
@@ -46,7 +56,18 @@ export function swipeOnElement(element, direction, percentage = 0.5) {
                 y: Math.round(- elementDimension.height * percentage),
             };
             break;
-
+        case 'down':
+            start = {
+                x: Math.round(elementPosition.x + elementDimension.width * 0.5),
+                y: Math.round(elementPosition.y + elementDimension.height * 0.2),
+            };
+            by = {
+                x: 0,
+                y: Math.round(elementDimension.height * percentage),
+            }
+            break;
+        default:
+            console.log(`Direction '${direction}' not supported!, only 'left', 'right', 'up', 'down' are supported!`);
     }
     swipe(start, by);
 }
