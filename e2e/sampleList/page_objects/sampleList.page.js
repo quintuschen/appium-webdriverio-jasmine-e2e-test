@@ -1,20 +1,21 @@
 import BasePage from '../../common/page_objects/basePage.page';
 import {swipeOnElement} from "../../../support/utils";
 
-const nameAccessibilityIDMapping = {
+const SELECTORS = {
     'Native View' : '~chainedView',
     'Slider' : '~slider1',
     'Wheel Picker': '~wheelPicker',
 };
 
 class SampleList extends BasePage {
-    get scrollViewContainer() { return $(`~scrollView`)}
+    static get selectors() { return SELECTORS; }
+    static get scrollViewContainer() { return $(`~scrollView`)}
 
     scrollToFind(item) {
-        while(!device.isVisible(nameAccessibilityIDMapping[item])){
+        while(!device.isVisible(this.selectors[item])){
             swipeOnElement(this.scrollViewContainer, 'up');
         }
-        return $(nameAccessibilityIDMapping[item]);
+        return $(this.selectors[item]);
     }
 }
 

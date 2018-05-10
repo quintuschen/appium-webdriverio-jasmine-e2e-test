@@ -64,7 +64,7 @@ export function swipeOnElement(element, direction, percentage = 0.5) {
             by = {
                 x: 0,
                 y: Math.round(elementDimension.height * percentage),
-            }
+            };
             break;
         default:
             console.log(`Direction '${direction}' not supported!, only 'left', 'right', 'up', 'down' are supported!`);
